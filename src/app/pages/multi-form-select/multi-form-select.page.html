@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>multi-form-select</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-grid>
+  <ion-row style="text-align: center;">
+    <ion-col>
+      <ion-button [textContent]="'first'"></ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button [textContent]="'second'"></ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button [textContent]="'third'"></ion-button>
+    </ion-col>
+
+  </ion-row>
+</ion-grid> -->
+  <ion-segment (ionChange)="beneficialOwnerChanged($event)" value="myself">
+    <ion-segment-button value="myself">
+      <ion-label>Myself</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="company">
+      <ion-label>Company</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="others">
+      <ion-label>Others</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+<!-- <p>this is atest </p> -->
+  <div *ngIf="beneficiaryMode==='myself'">
+    <!-- <form [formGroup]="firstForm"> -->
+      <ion-item>
+        <ion-label></ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    <!-- </form> -->
+
+  </div>
+  <div *ngIf="beneficiaryMode==='company'">
+    <!-- <form [formGroup]="secondForm"> -->
+      <ion-item>
+        <ion-label>Company Name</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Founded Date</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Owner Name</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    <!-- </form> -->
+    <p>{{beneficiaryMode}}</p>
+  </div>
+  <div *ngIf="beneficiaryMode==='others'">
+    <!-- <form [formGroup]="thirdForm"> -->
+      <ion-item>
+        <ion-label>Beneficiary Name</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Date Of Birth</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Address Line One</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    <!-- </form> -->
+    <p>{{beneficiaryMode}}</p>
+  </div>
+</ion-content>

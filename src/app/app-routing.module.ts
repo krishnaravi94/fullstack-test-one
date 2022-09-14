@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'multi-form-select',
+    loadChildren: () => import('./pages/multi-form-select/multi-form-select.module').then( m => m.MultiFormSelectPageModule)
+  },
 ];
 
 @NgModule({
